@@ -160,12 +160,19 @@ struct DeviceDetailSheet: View {
 
         HStack(spacing: 8) {
             Circle().fill(conn.connectionType.color).frame(width: 10, height: 10)
-            if conn.connectionType.isBidirectional {
-                Text("\(fromName) ↔ \(toName)")
-                    .font(.subheadline)
-            } else {
-                Text("\(fromName) → \(toName)")
-                    .font(.subheadline)
+            VStack(alignment: .leading, spacing: 2) {
+                if conn.connectionType.isBidirectional {
+                    Text("\(fromName) ↔ \(toName)")
+                        .font(.subheadline)
+                } else {
+                    Text("\(fromName) → \(toName)")
+                        .font(.subheadline)
+                }
+                if !conn.channelMap.isEmpty {
+                    Text(conn.channelMap)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
             }
             Spacer()
             Text(conn.connectionType.rawValue)

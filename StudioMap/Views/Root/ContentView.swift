@@ -65,6 +65,22 @@ struct ContentView: View {
                 EditConnectionView(connection: conn, studio: studio)
                     .environmentObject(appState)
             }
+
+        case .signalPaths:
+            if let studio = appState.selectedStudio {
+                SignalPathsView(studio: studio)
+                    .environmentObject(appState)
+            }
+
+        case .editSignalPath(let path):
+            if let studio = appState.selectedStudio {
+                EditSignalPathView(path: path, studio: studio)
+                    .environmentObject(appState)
+            }
+
+        case .addAUv3:
+            AUv3PickerView()
+                .environmentObject(appState)
         }
     }
 }

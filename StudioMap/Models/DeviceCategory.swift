@@ -28,6 +28,8 @@ enum DeviceCategory: String, Codable, CaseIterable, Identifiable {
     case videoMonitor = "Video Monitor"
     case instrument = "Instrument"
     case mobileDevice = "Mobile Device"
+    case auv3Plugin = "AUv3 Plugin"
+    case softwareSynth = "Software Synth"
     case other = "Other"
 
     var id: String { rawValue }
@@ -57,6 +59,8 @@ enum DeviceCategory: String, Codable, CaseIterable, Identifiable {
         case .multi:                       return "square.grid.2x2"
         case .instrument:                  return "guitars"
         case .mobileDevice:                return "ipad.and.iphone"
+        case .auv3Plugin:                  return "puzzlepiece.extension"
+        case .softwareSynth:               return "keyboard.macwindow"
         case .other:                       return "questionmark.square"
         }
     }
@@ -80,6 +84,8 @@ enum DeviceCategory: String, Codable, CaseIterable, Identifiable {
         case .patchbay:                         return Color(red: 0.7, green: 0.4, blue: 0.2)
         case .instrument:                       return Color(red: 0.6, green: 0.8, blue: 0.4)
         case .mobileDevice:                     return Color(red: 0.3, green: 0.7, blue: 0.9)
+        case .auv3Plugin:                       return Color(red: 0.9, green: 0.5, blue: 0.9)
+        case .softwareSynth:                    return Color(red: 0.5, green: 0.9, blue: 0.7)
         default:                                return .gray
         }
     }
@@ -98,6 +104,8 @@ enum DeviceCategory: String, Codable, CaseIterable, Identifiable {
         case .studioMonitor, .headphones, .videoMonitor:       return 6
         case .instrument:                                      return 0
         case .mobileDevice:                                    return 0
+        case .softwareSynth:                                   return 1
+        case .auv3Plugin:                                      return 4
         default:                                               return 4
         }
     }

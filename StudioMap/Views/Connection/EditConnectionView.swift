@@ -65,6 +65,10 @@ struct EditConnectionView: View {
                             .font(.caption)
                             .foregroundStyle(.secondary)
                     }
+                    TextField("Channel Routing", text: $draft.channelMap,
+                              prompt: Text("e.g. Out 3+4 → In 1+2"))
+                } footer: {
+                    Text("Optionally document which physical channels this cable uses.")
                 }
 
                 // Port-to-port section

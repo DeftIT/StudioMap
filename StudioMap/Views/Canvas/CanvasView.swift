@@ -10,7 +10,8 @@ struct CanvasView: View {
             let size = geo.size
             ZStack {
                 // Layer 1: Connection lines (below everything)
-                ConnectionLinesView(studio: studio, canvasVM: canvasVM, containerSize: size)
+                ConnectionLinesView(studio: studio, canvasVM: canvasVM, containerSize: size,
+                                    highlightedPathId: appState.highlightedPathId)
 
                 // Layer 2: In-progress connection creation overlay
                 if canvasVM.isCreatingConnection {

@@ -14,6 +14,7 @@ struct Connection: Identifiable, Codable, Equatable {
     var toPortId: UUID? = nil     // references Port.id in toDevice.customPorts
     var fromPortLabel: String = "" // free-text fallback (e.g. "3.5mm jack", "Out 1")
     var toPortLabel: String = ""   // free-text fallback (e.g. "1/4\" input")
+    var channelMap: String = ""    // e.g. "Out 3+4 → In 1+2", "USB Ch 1+2 only"
 
     var lineThickness: CGFloat {
         switch channelCount {

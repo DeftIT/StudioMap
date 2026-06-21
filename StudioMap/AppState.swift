@@ -6,6 +6,7 @@ final class AppState: ObservableObject {
     @Published var selectedStudioId: UUID? = nil
     @Published var activeSheet: ActiveSheet? = nil
     @Published var exportURL: URL? = nil
+    @Published var highlightedPathId: UUID? = nil
 
     init() {
         PersistenceManager.shared.ensureDirectories()
@@ -105,6 +106,32 @@ final class AppState: ObservableObject {
     func deleteConnection(id: UUID, fromStudioId sid: UUID) {
         guard let si = studioIndex(sid) else { return }
         studios[si].connections.removeAll { $0.id == id }
+        for pi in studios[si].signalPaths.indices {
+            studios[si].signalPaths[pi].connectionIds.removeAll { $0 == id }
+        }
+        save()
+    }
+
+    // MARK: - Signal Path CRUD
+
+    func addSignalPath(_ path: SignalPath, toStudioId sid: UUID) {
+        guard let idx = studioIndex(sid) else { return }
+        studios[idx].signalPaths.append(path)
+        save()
+    }
+
+    func updateSignalPath(_ path: SignalPath, inStudioId sid: UUID) {
+        guard let si = studioIndex(sid),
+              let pi = studios[si].signalPaths.firstIndex(where: { $0.id == path.id })
+        else { return }
+        studios[si].signalPaths[pi] = path
+        save()
+    }
+
+    func deleteSignalPath(id: UUID, fromStudioId sid: UUID) {
+        guard let si = studioIndex(sid) else { return }
+        studios[si].signalPaths.removeAll { $0.id == id }
+        if highlightedPathId == id { highlightedPathId = nil }
         save()
     }
 
@@ -161,6 +188,9 @@ enum ActiveSheet: Identifiable {
     case connectionLegend
     case addStudio
     case connectionMatrix
+    case signalPaths
+    case editSignalPath(SignalPath)
+    case addAUv3
 
     var id: String {
         switch self {
@@ -172,6 +202,9 @@ enum ActiveSheet: Identifiable {
         case .connectionLegend:                    return "legend"
         case .addStudio:                           return "addStudio"
         case .connectionMatrix:                    return "matrix"
+        case .signalPaths:                         return "signalPaths"
+        case .editSignalPath(let p):               return "editSignalPath-\(p.id)"
+        case .addAUv3:                             return "addAUv3"
         }
     }
 }

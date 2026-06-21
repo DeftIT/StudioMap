@@ -41,6 +41,13 @@
 		1F90C3F67D9A2D4C42F53A73 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CE46CE85947089D8DC8C90 /* ContentView.swift */; };
 		BBC752204994F05921F7E3C2 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461C74503C29C683B1F1B3DB /* SidebarView.swift */; };
 		10F516610684ACB66CE8B87B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC3340C45202B29152467289 /* Assets.xcassets */; };
+		B99C1A10FD03D41D535DBE06 /* SignalPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB918A279C9009BDC02BFFE9 /* SignalPath.swift */; };
+		04C77B3827674C1F5A6F5A7A /* TreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B07867BE87A51357DF52477D /* TreeView.swift */; };
+		2B4A183AA7D534A40AAD3B58 /* MixerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1A6A265BAAF74EEF0CB0F3 /* MixerView.swift */; };
+		1967799E7398B272E9031FD6 /* StudioListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4070C3625DB7CAB6DD8C029E /* StudioListView.swift */; };
+		43EDA11BAAB4B6C3B2918D7D /* SignalPathsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06E60B1B0A0B4915D96F6C5 /* SignalPathsView.swift */; };
+		AB5EF5AAB5E6C241B34B08B5 /* EditSignalPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171E63D6C1F8DC71EA8807B2 /* EditSignalPathView.swift */; };
+		9EC9981BC5B7A428A71F54A4 /* AUv3PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8BFF3745D293BE554E62DD /* AUv3PickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +86,13 @@
 		A2CE46CE85947089D8DC8C90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		461C74503C29C683B1F1B3DB /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
 		CC3340C45202B29152467289 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AB918A279C9009BDC02BFFE9 /* SignalPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalPath.swift; sourceTree = "<group>"; };
+		B07867BE87A51357DF52477D /* TreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreeView.swift; sourceTree = "<group>"; };
+		5D1A6A265BAAF74EEF0CB0F3 /* MixerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MixerView.swift; sourceTree = "<group>"; };
+		4070C3625DB7CAB6DD8C029E /* StudioListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioListView.swift; sourceTree = "<group>"; };
+		D06E60B1B0A0B4915D96F6C5 /* SignalPathsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalPathsView.swift; sourceTree = "<group>"; };
+		171E63D6C1F8DC71EA8807B2 /* EditSignalPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditSignalPathView.swift; sourceTree = "<group>"; };
+		7A8BFF3745D293BE554E62DD /* AUv3PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AUv3PickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +147,7 @@
 				21D29C3E4D28312A8AB7FACC,
 				7D58D99C17B27F3DE2B1A4D2,
 				394D403CAF2DEA1EECC45946,
+				AB918A279C9009BDC02BFFE9,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -174,6 +189,9 @@
 				6379E5BE14A5691E03AD8F5C,
 				A1F06E7A3E38CBFC65713958,
 				F3B3D47566F28524F07E8657,
+				827060E9B233CD8A7CCA824B,
+				1677AC5898DB5C60028A66A6,
+				423978FD6AA89E425DD1C4B8,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -187,6 +205,7 @@
 				2F29EE6E3ABB5C6CE55957A5,
 				62DF868018C5C4A02534D599,
 				B17798B737997DBC9AF45C23,
+				4070C3625DB7CAB6DD8C029E,
 			);
 			name = Canvas;
 			sourceTree = "<group>";
@@ -208,6 +227,7 @@
 				397EE3327A462A51EA026917,
 				693002CBB806348DEEC33E1F,
 				DDC751AE987E313CBED758F3,
+				7A8BFF3745D293BE554E62DD,
 			);
 			name = Device;
 			sourceTree = "<group>";
@@ -227,6 +247,31 @@
 				461C74503C29C683B1F1B3DB,
 			);
 			name = Root;
+			sourceTree = "<group>";
+		};
+		827060E9B233CD8A7CCA824B /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				B07867BE87A51357DF52477D,
+			);
+			name = Tree;
+			sourceTree = "<group>";
+		};
+		1677AC5898DB5C60028A66A6 /* Mixer */ = {
+			isa = PBXGroup;
+			children = (
+				5D1A6A265BAAF74EEF0CB0F3,
+			);
+			name = Mixer;
+			sourceTree = "<group>";
+		};
+		423978FD6AA89E425DD1C4B8 /* SignalPaths */ = {
+			isa = PBXGroup;
+			children = (
+				D06E60B1B0A0B4915D96F6C5,
+				171E63D6C1F8DC71EA8807B2,
+			);
+			name = SignalPaths;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +380,13 @@
 				9D87C4FFFE69E1A01A230694 /* ConnectionMatrixView.swift in Sources */,
 				1F90C3F67D9A2D4C42F53A73 /* ContentView.swift in Sources */,
 				BBC752204994F05921F7E3C2 /* SidebarView.swift in Sources */,
+				B99C1A10FD03D41D535DBE06 /* SignalPath.swift in Sources */,
+				04C77B3827674C1F5A6F5A7A /* TreeView.swift in Sources */,
+				2B4A183AA7D534A40AAD3B58 /* MixerView.swift in Sources */,
+				1967799E7398B272E9031FD6 /* StudioListView.swift in Sources */,
+				43EDA11BAAB4B6C3B2918D7D /* SignalPathsView.swift in Sources */,
+				AB5EF5AAB5E6C241B34B08B5 /* EditSignalPathView.swift in Sources */,
+				9EC9981BC5B7A428A71F54A4 /* AUv3PickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,6 +6,7 @@ struct Studio: Identifiable, Codable, Equatable {
     var createdAt: Date = Date()
     var devices: [Device] = []
     var connections: [Connection] = []
+    var signalPaths: [SignalPath] = []
 
     // Persisted viewport state
     var viewportOffsetX: Double = 0
